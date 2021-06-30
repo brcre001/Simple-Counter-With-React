@@ -16,22 +16,18 @@ export const SecondsCounter = props => {
 			.split("")
 			.slice(seconds.length)
 			.join("") + seconds
-	)
-		.split("")
-		.unshift(icon);
+	).split("");
 
-	let result = "test";
+	// Creates each div for
+	let result = output.map((element, index) => {
+		return (
+			<div className="box" key={index}>
+				{element}
+			</div>
+		);
+	});
 
-	// let result = output.map((element, index) => {
-	// 	return (
-	// 		<div className="box" key={index}>
-	// 			{element}
-	// 		</div>
-	// 	);
-	// });
-	console.log(output);
-
-	return <div>{result}</div>;
+	return <div className="container">{result}</div>;
 };
 
 SecondsCounter.propTypes = {
