@@ -9,7 +9,25 @@ import "bootstrap";
 import "../styles/index.scss";
 
 //import your own components
-import { SecondsCounter } from "./component/home.js";
+import { SecondsCounter } from "./component/SecondsCounter.js";
 
-//render your react application
-ReactDOM.render(<SecondsCounter/>, document.querySelector("#app"));
+//render your react application using set interval
+
+// Initializing the counter
+let counter = 1;
+
+const interval = setInterval(() => {
+	// This conditional will stop the loop
+	// by using the clearInterval
+	if (counter == 30) {
+		clearInterval(interval);
+	}
+
+	// ReactDOM will render the page as the counter increases in value
+	// and is passed to the seconds property in the component
+	ReactDOM.render(
+		<SecondsCounter seconds={counter} />,
+		document.querySelector("#app")
+	);
+	counter++;
+}, 1000);
