@@ -19,7 +19,7 @@ let counter = 1;
 const interval = setInterval(() => {
 	// This conditional will stop the loop
 	// by using the clearInterval
-	if (counter == 30) {
+	if (counter == 999999) {
 		clearInterval(interval);
 	}
 

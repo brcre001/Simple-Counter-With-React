@@ -8,9 +8,6 @@ export const SecondsCounter = props => {
 	// Converting the passed property of seconds from number to string
 	let seconds = props.seconds.toString();
 
-	// Importing the font-awesome icon into a variable
-	let icon = <i className="far fa-clock"></i>;
-
 	let output = (
 		placeholder
 			.split("")
@@ -27,7 +24,14 @@ export const SecondsCounter = props => {
 		);
 	});
 
-	return <div className="container">{result}</div>;
+	return (
+		<div className="container">
+			<div className="box">
+				<i className="far fa-clock"></i>
+			</div>
+			{result}
+		</div>
+	);
 };
 
 SecondsCounter.propTypes = {
