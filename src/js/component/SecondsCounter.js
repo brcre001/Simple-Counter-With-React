@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Card } from "./Card.js";
+import React from "react";
 import PropTypes from "prop-types";
 
 export const SecondsCounter = props => {
